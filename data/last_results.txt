@@ -1,0 +1,169 @@
+Smart Public Transport Advisor - Journey Results
+=======================================================
+Origin:      Jordan
+Destination: Tsim Sha Tsui
+Preference:  fastest
+Routes found: 23
+=======================================================
+
+Route #1
+  Cost:     HK$4.9
+  Time:     2 min
+  Hops:     1
+  Path:     Jordan -> Tsim Sha Tsui
+  Modes:    MTR
+-------------------------------------------------------
+Route #2
+  Cost:     HK$10.3
+  Time:     20 min
+  Hops:     2
+  Path:     Jordan -> Mong Kok -> Tsim Sha Tsui
+  Modes:    Minibus -> Bus
+-------------------------------------------------------
+Route #3
+  Cost:     HK$10.7
+  Time:     18 min
+  Hops:     2
+  Path:     Jordan -> Mong Kok -> Tsim Sha Tsui
+  Modes:    MTR -> Bus
+-------------------------------------------------------
+Route #4
+  Cost:     HK$46.1
+  Time:     31 min
+  Hops:     1
+  Path:     Jordan -> Mong Kok -> Prince Edward -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    MTR -> MTR -> MTR -> MTR -> MTR -> MTR
+-------------------------------------------------------
+Route #5
+  Cost:     HK$45.7
+  Time:     33 min
+  Hops:     2
+  Path:     Jordan -> Mong Kok -> Prince Edward -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    Minibus -> MTR -> MTR -> MTR -> MTR -> MTR
+-------------------------------------------------------
+Route #6
+  Cost:     HK$20.4
+  Time:     58 min
+  Hops:     3
+  Path:     Jordan -> Mong Kok -> Tsuen Wan -> Tsim Sha Tsui
+  Modes:    MTR -> Bus -> Minibus
+-------------------------------------------------------
+Route #7
+  Cost:     HK$41.1
+  Time:     54 min
+  Hops:     2
+  Path:     Jordan -> Mong Kok -> Prince Edward -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    MTR -> MTR -> MTR -> MTR -> MTR -> Bus
+-------------------------------------------------------
+Route #8
+  Cost:     HK$38.3
+  Time:     49 min
+  Hops:     2
+  Path:     Jordan -> Mong Kok -> Prince Edward -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    MTR -> MTR -> MTR -> MTR -> MTR -> Ferry
+-------------------------------------------------------
+Route #9
+  Cost:     HK$37.9
+  Time:     51 min
+  Hops:     3
+  Path:     Jordan -> Mong Kok -> Prince Edward -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    Minibus -> MTR -> MTR -> MTR -> MTR -> Ferry
+-------------------------------------------------------
+Route #10
+  Cost:     HK$20.0
+  Time:     60 min
+  Hops:     3
+  Path:     Jordan -> Mong Kok -> Tsuen Wan -> Tsim Sha Tsui
+  Modes:    Minibus -> Bus -> Minibus
+-------------------------------------------------------
+Route #11
+  Cost:     HK$55.1
+  Time:     59 min
+  Hops:     3
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    MTR -> Bus -> MTR -> MTR -> MTR -> MTR
+-------------------------------------------------------
+Route #12
+  Cost:     HK$40.7
+  Time:     56 min
+  Hops:     3
+  Path:     Jordan -> Mong Kok -> Prince Edward -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    Minibus -> MTR -> MTR -> MTR -> MTR -> Bus
+-------------------------------------------------------
+Route #13
+  Cost:     HK$54.7
+  Time:     61 min
+  Hops:     3
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    Minibus -> Bus -> MTR -> MTR -> MTR -> MTR
+-------------------------------------------------------
+Route #14
+  Cost:     HK$51.1
+  Time:     64 min
+  Hops:     4
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    MTR -> Bus -> Minibus -> MTR -> MTR -> MTR
+-------------------------------------------------------
+Route #15
+  Cost:     HK$50.7
+  Time:     66 min
+  Hops:     4
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    Minibus -> Bus -> Minibus -> MTR -> MTR -> MTR
+-------------------------------------------------------
+Route #16
+  Cost:     HK$50.1
+  Time:     82 min
+  Hops:     4
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    MTR -> Bus -> MTR -> MTR -> MTR -> Bus
+-------------------------------------------------------
+Route #17
+  Cost:     HK$47.3
+  Time:     77 min
+  Hops:     4
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    MTR -> Bus -> MTR -> MTR -> MTR -> Ferry
+-------------------------------------------------------
+Route #18
+  Cost:     HK$46.1
+  Time:     87 min
+  Hops:     5
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    MTR -> Bus -> Minibus -> MTR -> MTR -> Bus
+-------------------------------------------------------
+Route #19
+  Cost:     HK$46.9
+  Time:     79 min
+  Hops:     4
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    Minibus -> Bus -> MTR -> MTR -> MTR -> Ferry
+-------------------------------------------------------
+Route #20
+  Cost:     HK$43.3
+  Time:     82 min
+  Hops:     5
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    MTR -> Bus -> Minibus -> MTR -> MTR -> Ferry
+-------------------------------------------------------
+Route #21
+  Cost:     HK$49.7
+  Time:     84 min
+  Hops:     4
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    Minibus -> Bus -> MTR -> MTR -> MTR -> Bus
+-------------------------------------------------------
+Route #22
+  Cost:     HK$42.9
+  Time:     84 min
+  Hops:     5
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    Minibus -> Bus -> Minibus -> MTR -> MTR -> Ferry
+-------------------------------------------------------
+Route #23
+  Cost:     HK$45.7
+  Time:     89 min
+  Hops:     5
+  Path:     Jordan -> Mong Kok -> Sha Tin -> Kowloon Tong -> Admiralty -> Central -> Tsim Sha Tsui
+  Modes:    Minibus -> Bus -> Minibus -> MTR -> MTR -> Bus
+-------------------------------------------------------

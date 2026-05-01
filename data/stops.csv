@@ -1,0 +1,16 @@
+id,name,latitude,longitude,lines
+S01,Central,22.2819,114.1584,MTR;Ferry;Tram;Bus
+S02,Admiralty,22.2793,114.1654,MTR;Bus
+S03,Wan Chai,22.2775,114.1734,MTR;Tram;Bus
+S04,Causeway Bay,22.2802,114.1841,MTR;Tram;Bus
+S05,Tsim Sha Tsui,22.2974,114.1722,MTR;Bus;Ferry
+S06,Jordan,22.3049,114.1718,MTR;Bus;Minibus
+S07,Mong Kok,22.3192,114.1694,MTR;Bus;Minibus
+S08,Prince Edward,22.3245,114.1682,MTR;Bus
+S09,Kowloon Tong,22.3372,114.1762,MTR;Bus;Minibus
+S10,Sha Tin,22.3828,114.1879,MTR;Bus;Minibus
+S11,HKU,22.2840,114.1350,MTR;Bus
+S12,Kennedy Town,22.2813,114.1285,MTR;Tram;Bus
+S13,North Point,22.2913,114.2000,MTR;Ferry;Tram;Bus
+S14,Quarry Bay,22.2880,114.2090,MTR;Bus
+S15,Tsuen Wan,22.3733,114.1178,MTR;Bus;Minibus
