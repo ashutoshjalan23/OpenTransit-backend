@@ -1,2 +1,36 @@
-# OpenTransit-backend
-This repo contains the backend of our COMP1110 group project , OpenTransit
+# OpenTransit Backend
+
+This repository contains the Python backend for the COMP1110 Open Transit project.
+
+## Endpoints
+
+- `GET /`
+- `GET /health`
+- `GET /network`
+- `GET /eta?stopId=S01`
+- `POST /plan`
+
+## Local Run
+
+```bash
+python -m pip install -r requirements.txt
+python backend_api.py
+```
+
+Default local URL: `http://127.0.0.1:8000`
+
+## Deployment
+
+The server supports Railway/Heroku-style deployment:
+
+- `PORT` is used automatically when provided by the hosting platform.
+- `HOST` is used automatically when provided, otherwise the server binds to `0.0.0.0`.
+- The older `HK_TRANSIT_BACKEND_PORT` and `HK_TRANSIT_BACKEND_HOST` variables still work for local overrides.
+
+After deploying this backend, set the frontend repo's Vercel environment variable:
+
+```text
+BACKEND_URL=https://your-backend-domain
+```
+
+The frontend will call the backend through its same-origin `/api/backend/...` proxy.

@@ -26,8 +26,8 @@ from check import eta_minutes, kmb_stop_eta, mtr_eta, nearby_kmb, nearby_mtr
 from file_io import load_network
 
 
-HOST = os.environ.get("HK_TRANSIT_BACKEND_HOST", "127.0.0.1")
-PORT = int(os.environ.get("HK_TRANSIT_BACKEND_PORT", "8000"))
+HOST = os.environ.get("HOST", os.environ.get("HK_TRANSIT_BACKEND_HOST", "0.0.0.0"))
+PORT = int(os.environ.get("PORT", os.environ.get("HK_TRANSIT_BACKEND_PORT", "8000")))
 MAX_DEPTH = 8
 RESULT_LIMIT = 5
 
@@ -308,6 +308,14 @@ class TransitRequestHandler(BaseHTTPRequestHandler):
 
             if path == "/health":
                 self.send_json(200, {"ok": True})
+                return
+
+            if path == "/":
+                self.send_json(200, {
+                    "name": "Open Transit backend",
+                    "ok": True,
+                    "endpoints": ["/health", "/network", "/eta?stopId=S01", "/plan"],
+                })
                 return
 
             if path == "/network":
