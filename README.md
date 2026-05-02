@@ -11,7 +11,7 @@ This repository contains the Python backend for the COMP1110 Open Transit projec
 - `GET /eta?stopId=S01`
 - `POST /plan`
 
-`/network` includes stops, segments, and summary metrics. `/summary` returns only the four summary values used by the frontend: number of stops, number of segments, average direct commute time, and average cost.
+`/network` includes stops, segments, and summary metrics. `/summary` returns only the summary metrics.
 
 ## Local Run
 
@@ -26,16 +26,8 @@ Default local URL: `http://127.0.0.1:8000`
 
 Production backend: [https://open-transit-backend.vercel.app](https://open-transit-backend.vercel.app)
 
-The server supports Vercel serverless deployment through `api/index.py`, and Railway/Heroku-style deployment through `backend_api.py`:
-
-- `PORT` is used automatically when provided by the hosting platform.
-- `HOST` is used automatically when provided, otherwise the server binds to `0.0.0.0`.
-- The older `HK_TRANSIT_BACKEND_PORT` and `HK_TRANSIT_BACKEND_HOST` variables still work for local overrides.
-
-After deploying this backend, set the frontend repo's Vercel environment variable:
+Frontend Vercel environment variable:
 
 ```text
 BACKEND_URL=https://open-transit-backend.vercel.app
 ```
-
-The frontend will call the backend through its same-origin `/api/backend/...` proxy.
