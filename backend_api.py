@@ -34,6 +34,26 @@ RESULT_LIMIT = 5
 NETWORK = load_network()
 
 
+def normalise_preference(value):
+    preference_map = {
+        "1": "cheapest",
+        "cheap": "cheapest",
+        "cheapest": "cheapest",
+        "cost": "cheapest",
+        "2": "fastest",
+        "fast": "fastest",
+        "fastest": "fastest",
+        "time": "fastest",
+        "3": "fewest",
+        "fewest": "fewest",
+        "hops": "fewest",
+        "least": "fewest",
+    }
+    if value is None:
+        return None
+    return preference_map.get(str(value).strip().lower())
+
+
 def serialise_stop(stop):
     return {
         "id": stop.id,
@@ -191,6 +211,7 @@ def parse_kmb_entries(stop):
 
 
 def build_eta_payload(stop_id):
+    stop_id = NETWORK.resolve_stop_id(stop_id)
     stop = NETWORK.stops.get(stop_id)
     if stop is None:
         return None
@@ -273,6 +294,10 @@ def apply_realtime_adjustments(journeys):
 
 
 def build_plan_payload(origin_id, dest_id, preference, realtime):
+    origin_id = NETWORK.resolve_stop_id(origin_id)
+    dest_id = NETWORK.resolve_stop_id(dest_id)
+    preference = normalise_preference(preference) or preference
+
     paths = NETWORK.find_all_paths(origin_id, dest_id, max_depth=MAX_DEPTH)
     journeys = journey_logic.build_journeys(paths, NETWORK, realtime=False)
 
@@ -326,12 +351,12 @@ class TransitRequestHandler(BaseHTTPRequestHandler):
                 return
 
             if path == "/eta":
-                stop_id = first_query_value(query, "stopId", "stop_id")
-                if not stop_id:
+                requested_stop_id = first_query_value(query, "stopId", "stop_id")
+                if not requested_stop_id:
                     self.send_json(400, {"error": "Missing stopId"})
                     return
 
-                payload = build_eta_payload(stop_id)
+                payload = build_eta_payload(requested_stop_id)
                 if payload is None:
                     self.send_json(404, {"error": "Unknown stop"})
                     return
@@ -352,9 +377,9 @@ class TransitRequestHandler(BaseHTTPRequestHandler):
                 return
 
             body = self.read_json_body()
-            origin_id = body.get("originId")
-            dest_id = body.get("destId")
-            preference = body.get("preference")
+            origin_id = NETWORK.resolve_stop_id(body.get("originId"))
+            dest_id = NETWORK.resolve_stop_id(body.get("destId"))
+            preference = normalise_preference(body.get("preference"))
             realtime = bool(body.get("realtime"))
 
             if not origin_id or not dest_id or preference not in journey_logic.PREFERENCE_KEYS:

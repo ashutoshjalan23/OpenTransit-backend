@@ -21,7 +21,9 @@ Default local URL: `http://127.0.0.1:8000`
 
 ## Deployment
 
-The server supports Railway/Heroku-style deployment:
+Production backend: [https://open-transit-backend.vercel.app](https://open-transit-backend.vercel.app)
+
+The server supports Vercel serverless deployment through `api/index.py`, and Railway/Heroku-style deployment through `backend_api.py`:
 
 - `PORT` is used automatically when provided by the hosting platform.
 - `HOST` is used automatically when provided, otherwise the server binds to `0.0.0.0`.
@@ -30,7 +32,7 @@ The server supports Railway/Heroku-style deployment:
 After deploying this backend, set the frontend repo's Vercel environment variable:
 
 ```text
-BACKEND_URL=https://your-backend-domain
+BACKEND_URL=https://open-transit-backend.vercel.app
 ```
 
 The frontend will call the backend through its same-origin `/api/backend/...` proxy.

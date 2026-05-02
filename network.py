@@ -74,6 +74,45 @@ class Network:
                 return sid
         return None
 
+    def resolve_stop_id(self, value):
+        """
+        Resolve common user input to a stop ID.
+
+        Accepts exact IDs in any case (S01, s01), numeric shortcuts (1, 01),
+        and the common typo where the zero is typed as the letter O (so1).
+        Exact stop names are also accepted case-insensitively.
+        """
+        if value is None:
+            return None
+
+        raw = str(value).strip()
+        if not raw:
+            return None
+
+        compact = "".join(ch for ch in raw.upper() if ch.isalnum())
+        for sid in self.stops:
+            if sid.upper() == compact:
+                return sid
+
+        name_match = self.get_stop_id_by_name(raw)
+        if name_match:
+            return name_match
+
+        token = compact
+        if token.startswith("S"):
+            suffix = token[1:].replace("O", "0")
+        else:
+            suffix = token.replace("O", "0")
+
+        if suffix and suffix.isdigit():
+            number = int(suffix)
+            for candidate in (f"S{number:02d}", f"S{number}", f"S{number:03d}"):
+                for sid in self.stops:
+                    if sid.upper() == candidate:
+                        return sid
+
+        return None
+
     def list_stop_names(self):
         """Return sorted list of (id, name) tuples."""
         return sorted([(s.id, s.name) for s in self.stops.values()], key=lambda x: x[0])
