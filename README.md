@@ -7,8 +7,11 @@ This repository contains the Python backend for the COMP1110 Open Transit projec
 - `GET /`
 - `GET /health`
 - `GET /network`
+- `GET /summary`
 - `GET /eta?stopId=S01`
 - `POST /plan`
+
+`/network` includes stops, segments, and summary metrics. `/summary` returns only the four summary values used by the frontend: number of stops, number of segments, average direct commute time, and average cost.
 
 ## Local Run
 

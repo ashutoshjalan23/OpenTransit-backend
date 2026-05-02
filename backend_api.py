@@ -8,6 +8,7 @@ The server exposes a small JSON API over the existing CSV dataset and
 Python journey engine:
     GET  /health
     GET  /network
+    GET  /summary
     GET  /eta?stopId=S01
     POST /plan
 """
@@ -72,6 +73,14 @@ def serialise_segment(segment):
         "mode": segment.mode,
         "duration": segment.duration,
         "cost": segment.cost,
+    }
+
+
+def build_network_payload():
+    return {
+        "stops": [serialise_stop(stop) for stop in NETWORK.stops.values()],
+        "segments": [serialise_segment(segment) for segment in NETWORK.segments.values()],
+        "summary": NETWORK.summary(),
     }
 
 
@@ -339,15 +348,16 @@ class TransitRequestHandler(BaseHTTPRequestHandler):
                 self.send_json(200, {
                     "name": "Open Transit backend",
                     "ok": True,
-                    "endpoints": ["/health", "/network", "/eta?stopId=S01", "/plan"],
+                    "endpoints": ["/health", "/network", "/summary", "/eta?stopId=S01", "/plan"],
                 })
                 return
 
             if path == "/network":
-                self.send_json(200, {
-                    "stops": [serialise_stop(stop) for stop in NETWORK.stops.values()],
-                    "segments": [serialise_segment(segment) for segment in NETWORK.segments.values()],
-                })
+                self.send_json(200, build_network_payload())
+                return
+
+            if path == "/summary":
+                self.send_json(200, NETWORK.summary())
                 return
 
             if path == "/eta":

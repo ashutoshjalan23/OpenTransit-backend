@@ -113,6 +113,28 @@ class Network:
 
         return None
 
+    def summary(self):
+        """
+        Return the core network summary used by the API.
+
+        Average commute time/cost are calculated across direct transport
+        segments because those are the atomic commute options in the network.
+        """
+        number_of_segments = len(self.segments)
+        if number_of_segments == 0:
+            average_time = 0.0
+            average_cost = 0.0
+        else:
+            average_time = sum(float(seg.duration) for seg in self.segments.values()) / number_of_segments
+            average_cost = sum(float(seg.cost) for seg in self.segments.values()) / number_of_segments
+
+        return {
+            "numberOfStops": len(self.stops),
+            "numberOfSegments": number_of_segments,
+            "averageCommuteTime": round(average_time, 1),
+            "averageCost": round(average_cost, 1),
+        }
+
     def list_stop_names(self):
         """Return sorted list of (id, name) tuples."""
         return sorted([(s.id, s.name) for s in self.stops.values()], key=lambda x: x[0])
